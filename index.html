@@ -11,8 +11,10 @@
   <div class="container">
     <h1>Master <span>Photoshop</span> with Iranian Premier League Graphics</h1>
     <p>Learn to create stunning football posters and match-day</p>
-    <p>August 25, 2025 | 7:00 PM Tehran Time</p>
-    <div class="logo"><img src="Vector.png" alt="Main Logo"></div>
+    <div class="logo">
+      <span><img src="Vector.png" alt="Main Logo" width="15px" height="16px"></span>
+      <p>August 30, 2025 | 7:00 PM Tehran Time</p>
+    </div>
     <a href="#reserve" class="btn">Reserve Your Spot</a>
 
     <h2>What You'll Learn</h2>
@@ -42,9 +44,11 @@
       </div>
     </div>
 
+    <!-- COUNTDOWN -->
     <div class="countdown">
-      Countdown to the Event:<div> 05:33:17</div>
+      Countdown to the Event: <div></div><span id="time"></span>
     </div>
+
     <p>Don’t miss out — secure your spot now!</p>
 
     <h2>Instructor</h2>
@@ -72,5 +76,30 @@
     </div>
   </div>
 
+
+  <script>
+    const eventDate = new Date("Aug 30, 2025 19:00:00").getTime();
+
+    const countdownEl = document.getElementById("time");
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        countdownEl.textContent = "The Event Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent =
+        `${days} Days ${String(hours).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart( 2,"0")}`;
+    }, 1000);
+  </script>
 </body>
 </html>

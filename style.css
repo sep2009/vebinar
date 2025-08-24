@@ -19,8 +19,13 @@ h1 span {
 }
 
 .logo {
-  margin-top: -40px;
-  margin-right: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  padding-top: 18px;
+  padding-right: 5px;
 }
 
 .btn {
@@ -45,7 +50,7 @@ h1 span {
   background: #f9f9f9;
   border-radius: 10px;
   padding: 20px;
-  padding-top: 60px; /* فاصله برای لوگو */
+  padding-top: 60px;
   position: relative;
   box-sizing: border-box;
   text-align: center;
@@ -55,7 +60,7 @@ h1 span {
   width: 60px;
   height: auto;
   position: absolute;
-  top: -30px; /* بالای کارت */
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
@@ -125,7 +130,6 @@ input {
   input {
     width: 80%;
   }
-
   .card-logo {
     width: 50px;
     top: 10px;
