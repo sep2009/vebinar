@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photoshop Webinar Landing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Master <span>Photoshop</span> with Iranian Premier League Graphics</h1>
+    <p>Learn to create stunning football posters and match-day</p>
+    <div class="logo">
+      <span><img src="Vector.png" alt="Main Logo" width="15px" height="16px"></span>
+      <p>August 30, 2025 | 7:00 PM Tehran Time</p>
+    </div>
+    <a href="#reserve" class="btn">Reserve Your Spot</a>
+
+    <h2>What You'll Learn</h2>
+    <div class="learn-grid">
+      <div class="card">
+        <img src="Vector2.png" alt="Logo 1" class="card-logo">
+        <h3>Poster Design Basics</h3>
+        <p>Learn how to create eye-catching football posters</p>
+      </div>
+
+      <div class="card">
+        <img src="Vector3.png" alt="Logo 2" class="card-logo">
+        <h3>Match-Day Graphics</h3>
+        <p>Design match-day graphics for social media and web</p>
+      </div>
+
+      <div class="card">
+        <img src="Vector4.png" alt="Logo 3" class="card-logo">
+        <h3>Advanced Photoshop Tools</h3>
+        <p>Use professional tools for quick effects and edits</p>
+      </div>
+
+      <div class="card">
+        <img src="Vector5.png" alt="Logo 4" class="card-logo">
+        <h3>Creative Workflow Tips</h3>
+        <p>Techniques for faster and more creative design</p>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+      Countdown to the Event: <div></div><span id="time"></span>
+    </div>
+
+    <p>Don’t miss out — secure your spot now!</p>
+
+    <h2>Instructor</h2>
+    <div class="instructor">
+      <img src="Rectangle 3.png" alt="Instructor">
+      <div>
+        <h3>Fiona Gallagher</h3>
+        <ul>
+          <li>Photoshop expert, makes editing look effortless and sharp.</li>
+          <li>Creative teacher, turns Photoshop tools into powerful art.</li>
+          <li>Teaches Photoshop clearly, inspires amazing design skills daily.</li>
+          <li>Passionate about editing, helps students master Photoshop fast.</li>
+          <li>Transforms ideas into stunning visual creations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="reserve" class="form">
+      <h2>Reserve Your Spot</h2>
+      <p>Enter your phone number and join the webinar.</p>
+      <input type="number" oninput="if(this.value.length > 11) this.value = this.value.slice(0, 11);" placeholder="09xxxxxxxxx">
+      <br>
+      <button>Join the Webinar</button>
+      <p>Your information will remain private.</p>
+    </div>
+  </div>
+
+
+  <script>
+    const eventDate = new Date("Sep 30, 2025 19:00:00").getTime();
+
+    const countdownEl = document.getElementById("time");
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        countdownEl.textContent = "The Event Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent =
+        `${days} Days ${String(hours).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart( 2,"0")}`;
+    }, 1000);
+  </script>
+</body>
+</html>
+
